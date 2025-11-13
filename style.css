@@ -54,32 +54,34 @@ nav a {
 nav a:hover {
   color: var(--accent1);
 }
-/* === NAVBAR STYLES === */
-header {
+/* === NAVBAR === */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.95);
   color: #fff;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 40px; /* ⬅️ increased from 30px for more right space */
-  z-index: 1000;
-  box-sizing: border-box;
+  padding: 14px 36px;
 }
 
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 1px;
 }
 
 nav {
   display: flex;
-  gap: 30px; /* ⬅️ slightly increased spacing between menu items */
+  gap: 30px;
 }
 
 .nav-btn {
@@ -93,7 +95,7 @@ nav {
   color: #00acee;
 }
 
-/* ✅ Hamburger button hidden on desktop */
+/* === TOGGLE BUTTON === */
 .hamburger {
   background: none;
   border: none;
@@ -101,7 +103,13 @@ nav {
   display: none;
 }
 
-/* ✅ Mobile view */
+#menu-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke: #fff; /* ✅ white toggle */
+}
+
+/* === MOBILE VIEW === */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -112,10 +120,10 @@ nav {
     flex-direction: column;
     background: #000;
     width: 100%;
-    text-align: center;
     position: relative;
     top: 10px;
     padding: 20px 0;
+    text-align: center;
   }
 
   nav.active {
@@ -132,11 +140,10 @@ nav {
     padding: 10px 0;
     font-size: 1.1rem;
   }
-}
 
-/* ✅ White toggle lines */
-#menu-btn svg {
-  stroke: #fff;
+  .hero {
+    margin-top: 300px; /* ensures hero visible after menu opens */
+  }
 }
 
 
@@ -1403,6 +1410,7 @@ nav .nav-btn:hover {
     height: 200px;
   }
 }
+
 
 
 
