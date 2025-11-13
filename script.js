@@ -123,10 +123,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, options);
 
-// === NAVBAR TOGGLE FUNCTION ===
+// ✅ Mobile Toggle Menu
 const menuBtn = document.getElementById("menu-btn");
 const navMenu = document.getElementById("navMenu");
+const hero = document.querySelector(".hero");
 
 menuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("active");
+  hero.classList.toggle("menu-open");
 });
+
+
